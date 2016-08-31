@@ -4,7 +4,7 @@
 
 Move and resize layers on the grid (View > Canvas > Grid Settings).
 
-<a href="/tomger/nudgeOnGrid/archive/master.zip">Download plugin</a>
+<a href="https://github.com/tomger/nudgeOnGrid/archive/master.zip">Download plugin</a>
 
 ### Demo
 
