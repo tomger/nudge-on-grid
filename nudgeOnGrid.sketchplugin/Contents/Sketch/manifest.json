@@ -1,0 +1,33 @@
+{
+  "name": "Nudge on Grid",
+  "description": "Nudge a Grid",
+  "author": "Tom",
+  "homepage": "http://tomgermeau.com",
+  "version": 1.0,
+  "identifier": "com.tomgermeau.nudgeongrid",
+  "updateURL": "http://tomgermeau.com",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    { "name": "Move Up",    "identifier": "move-up",    "shortcut": "ctrl alt ↑", "script": "main.coscript", "handler": "main" },
+    { "name": "Move Down",  "identifier": "move-down",  "shortcut": "ctrl alt ↓", "script": "main.coscript", "handler": "main" },
+    { "name": "Move Left",  "identifier": "move-left",  "shortcut": "ctrl alt ←", "script": "main.coscript", "handler": "main" },
+    { "name": "Move Right", "identifier": "move-right", "shortcut": "ctrl alt →", "script": "main.coscript", "handler": "main" },
+    { "name": "Resize Up",    "identifier": "resize-up",    "shortcut": "ctrl alt shift ↑", "script": "main.coscript", "handler": "main" },
+    { "name": "Resize Down",  "identifier": "resize-down",  "shortcut": "ctrl alt shift ↓", "script": "main.coscript", "handler": "main" },
+    { "name": "Resize Left",  "identifier": "resize-left",  "shortcut": "ctrl alt shift ←", "script": "main.coscript", "handler": "main" },
+    { "name": "Resize Right", "identifier": "resize-right", "shortcut": "ctrl alt shift →", "script": "main.coscript", "handler": "main" }
+  ],
+  "menu": {
+    "items": [
+      "move-up",
+      "move-down",
+      "move-left",
+      "move-right",
+      "resize-up",
+      "resize-down",
+      "resize-left",
+      "resize-right"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+/**
+ * nudgeOnGrid
+ *
+ * Copyright © 2016 Tom Germeau https://tomgermeau.com
+ * and licenced under the MIT licence. All rights not explicitly
+ * granted in the MIT license are reserved. See the included
+ * LICENSE file for more details.
+ */
+
+ // nudge coordinate to closest grid position in requested direction.
+ function nudge(value, direction, gridSize) {
+   var newValue;
+   if (value % gridSize != 0) {
+     // layer is yet not on the grid.
+     if (direction === 1) {
+       newValue = value + gridSize - value % gridSize;
+     } else {
+       newValue = value + -value % gridSize;
+     }
+   } else {
+     // layer is already on the grid.
+     newValue = value + direction * gridSize;
+   }
+   return newValue;
+ }
+
+
+function main(context) {
+  var identifier = context.command.identifier();
+  var selectedLayers = context.selection;
+  var selectedCount = selectedLayers.count();
+  var gridSize;
+
+  if (selectedCount == 0) {
+    return;
+  }
+  if (context.document.grid()) {
+    gridSize = context.document.grid().gridSize();
+  } else {
+    gridSize = MSDefaultGrid.defaultGrid().gridSize();
+  }
+
+  for (var i = 0; i < selectedCount; i++) {
+    var layer = selectedLayers[i];
+    switch (String(identifier)) {
+      case 'move-left':     layer.frame().setX(nudge(layer.frame().x(), -1, gridSize)); break;
+      case 'move-right':    layer.frame().setX(nudge(layer.frame().x(), 1, gridSize)); break;
+      case 'move-up':       layer.frame().setY(nudge(layer.frame().y(), -1, gridSize)); break;
+      case 'move-down':     layer.frame().setY(nudge(layer.frame().y(), 1, gridSize)); break;
+      case 'resize-left':   layer.frame().setWidth(nudge(layer.frame().width(), -1, gridSize)); break;
+      case 'resize-right':  layer.frame().setWidth(nudge(layer.frame().width(), 1, gridSize)); break;
+      case 'resize-up':     layer.frame().setHeight(nudge(layer.frame().height(), -1, gridSize)); break;
+      case 'resize-down':   layer.frame().setHeight(nudge(layer.frame().height(), 1, gridSize)); break;
+    }
+  }
+}
