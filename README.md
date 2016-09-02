@@ -2,7 +2,10 @@
 
 ### Description
 
+
 Move and resize layers on the grid (View > Canvas > Grid Settings).
+
+<img src="https://raw.githubusercontent.com/tomger/nudge-on-grid/readme/manual.png" align="right"/>
 
 It's different from the default behaviour:
 
@@ -17,5 +20,4 @@ It's different from the default behaviour:
 
 ### Demo
 
-<img src="https://raw.githubusercontent.com/tomger/nudge-on-grid/readme/demo.gif" height="250"/>
-<img src="https://raw.githubusercontent.com/tomger/nudge-on-grid/readme/manual.png" height="250"/>
+<img src="https://raw.githubusercontent.com/tomger/nudge-on-grid/readme/demo.gif" width="70%"/>
